@@ -1,1 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Legal Disclaimer:
+SWIFT © 2020. All rights reserved.
+This publication contains SWIFT or third-party confidential information. Do not disclose this publication outside your organisation without SWIFT's prior written consent.
+The use of this document is governed by the legal notices appearing at the end of this document. By using this document, you will be deemed to have accepted those legal notices.
+Use Case c.54.1.1 Customer Debit/Credit Notification (camt.054) of a Customer Credit Transfer (pacs.008) - Flow #2a
+-->
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0">
+	<Saa:Revision>2.0.10</Saa:Revision>
+	<Saa:Header>
+		<Saa:Message>
+			<Saa:SenderReference>SENDERREF1</Saa:SenderReference>
+			<Saa:MessageIdentifier>pacs.008.001.08</Saa:MessageIdentifier>
+			<Saa:Format>MX</Saa:Format>
+			<Saa:SubFormat>Input</Saa:SubFormat>
+			<Saa:Sender>
+				<Saa:DN>ou=aaa,o=swsgsgsg,o=swift</Saa:DN>
+				<Saa:FullName>
+					<Saa:X1>SWSGSGSGXXX</Saa:X1>
+				</Saa:FullName>
+			</Saa:Sender>
+			<Saa:Receiver>
+				<Saa:DN>ou=aaa,o=swsgsgsg,o=swift</Saa:DN>
+				<Saa:FullName>
+					<Saa:X1>SWSGSGSGXXX</Saa:X1>
+				</Saa:FullName>
+			</Saa:Receiver>
+			<Saa:InterfaceInfo>
+				<Saa:UserReference>REF1</Saa:UserReference>
+				<Saa:MessageCreator>ApplicationInterface</Saa:MessageCreator>
+				<Saa:MessageContext>Original</Saa:MessageContext>
+				<Saa:MessageNature>Financial</Saa:MessageNature>
+			</Saa:InterfaceInfo>
+			<Saa:NetworkInfo>
+				<Saa:Priority>Urgent</Saa:Priority>
+				<Saa:IsPossibleDuplicate>false</Saa:IsPossibleDuplicate>
+				<Saa:IsNotificationRequested>false</Saa:IsNotificationRequested>
+				<Saa:Service>swift.finplus!xpf</Saa:Service>
+				<Saa:SWIFTNetNetworkInfo>
+					<Saa:RequestType>pacs.008.001.08</Saa:RequestType>
+					<Saa:RequestSubtype>swift.cbprplus.02</Saa:RequestSubtype>
+				</Saa:SWIFTNetNetworkInfo>
+			</Saa:NetworkInfo>
+			<Saa:SecurityInfo>
+				<Saa:IsSigningRequested>true</Saa:IsSigningRequested>
+				<Saa:SWIFTNetSecurityInfo>
+					<Saa:IsNRRequested>false</Saa:IsNRRequested>
+				</Saa:SWIFTNetSecurityInfo>
+			</Saa:SecurityInfo>
+		</Saa:Message>
+	</Saa:Header>
+	<Saa:Body>
+		<AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+			<Fr>
+				<FIId>
+					<FinInstnId>
+						<BICFI>SWSGSGSG</BICFI>
+					</FinInstnId>
+				</FIId>
+			</Fr>
+			<To>
+				<FIId>
+					<FinInstnId>
+						<BICFI>SWSGSGSG</BICFI>
+					</FinInstnId>
+				</FIId>
+			</To>
+			<BizMsgIdr>pacs8bizmsgidr01</BizMsgIdr>
+			<MsgDefIdr>pacs.008.001.08</MsgDefIdr>
+			<BizSvc>swift.cbprplus.02</BizSvc>
+			<CreDt>2020-09-08T10:00:47+01:00</CreDt>
+		</AppHdr>
+		<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+			<FIToFICstmrCdtTrf>
+				<GrpHdr>
+					<MsgId>pacs8bizmsgidr01</MsgId>
+					<CreDtTm>2020-09-08T10:00:47+01:00</CreDtTm>
+					<NbOfTxs>1</NbOfTxs>
+					<SttlmInf>
+						<SttlmMtd>INDA</SttlmMtd>
+					</SttlmInf>
+				</GrpHdr>
+				<CdtTrfTxInf>
+					<PmtId>
+						<InstrId>pacs8bizmsgidr01</InstrId>
+						<EndToEndId>pacs008EndToEndId-001</EndToEndId>
+						<UETR>16736f27-558b-4102-a532-28f75fc3bb00</UETR>
+					</PmtId>
+					<IntrBkSttlmAmt Ccy="EUR">300000.</IntrBkSttlmAmt>
+            <IntrBkSttlmDt>2020-09-08</IntrBkSttlmDt>
+					<ChrgBr>DEBT</ChrgBr>
+					<InstgAgt>
+						<FinInstnId>
+							<BICFI>SWSGSGSG</BICFI>
+						</FinInstnId>
+					</InstgAgt>
+					<InstdAgt>
+						<FinInstnId>
+							<BICFI>SWSGSGSG</BICFI>
+						</FinInstnId>
+					</InstdAgt>
+					<IntrmyAgt1>
+						<FinInstnId>
+							<BICFI>DEUTNL2A</BICFI>
+						</FinInstnId>
+					</IntrmyAgt1>
+					<Dbtr>
+						<Nm>Flexo Merchant</Nm>
+						<PstlAdr>
+							<StrtNm>Main Street</StrtNm>
+							<TwnNm>Vienna</TwnNm>
+							<Ctry>AU</Ctry>
+						</PstlAdr>
+					</Dbtr>
+					<DbtrAgt>
+						<FinInstnId>
+							<BICFI>SWSGSGSG</BICFI>
+						</FinInstnId>
+					</DbtrAgt>
+					<CdtrAgt>
+						<FinInstnId>
+							<BICFI>ABNANL2A</BICFI>
+						</FinInstnId>
+					</CdtrAgt>
+					<Cdtr>
+						<Nm>Aegon NV</Nm>
+						<PstlAdr>
+							<StrtNm>Aegon Plein</StrtNm>
+							<TwnNm>Den Haag</TwnNm>
+							<Ctry>NL</Ctry>
+						</PstlAdr>
+					</Cdtr>
+				</CdtTrfTxInf>
+			</FIToFICstmrCdtTrf>
+		</Document>
+	</Saa:Body>
+</Saa:DataPDU>
 
