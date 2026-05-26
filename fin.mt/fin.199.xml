@@ -1,0 +1,34 @@
+001090                        <?xml version="1.0" encoding="UTF-8" ?>
+<DataPDU xmlns="urn:swift:saa:xsd:saa.2.0">
+	<Revision>2.0.3</Revision>
+	<Header>
+		<Message>
+			<SenderReference>ISWHTJPJ0XXX199419B990000000000$190508</SenderReference>
+			<MessageIdentifier>fin.199</MessageIdentifier>
+			<Format>MT</Format>
+			<SubFormat>Input</SubFormat>
+			<Sender>
+				<BIC12>SWHTJPJ0AXXX</BIC12>
+			</Sender>
+			<Receiver>
+				<BIC12>SWHTJPJ0XXXX</BIC12>
+			</Receiver>
+			<NetworkInfo>
+				<Priority>Normal</Priority>
+				<IsPossibleDuplicate>false</IsPossibleDuplicate>
+				<IsNotificationRequested>false</IsNotificationRequested>
+				<Service>swift.fin</Service>
+				<Network>FIN</Network>
+				<SessionNr>0</SessionNr>
+				<SeqNr>0</SeqNr>
+				<FINNetworkInfo>
+					<MessageSyntaxVersion>2018</MessageSyntaxVersion>
+				</FINNetworkInfo>
+			</NetworkInfo>
+			<SecurityInfo>
+				<FINSecurityInfo />
+			</SecurityInfo>
+		</Message>
+	</Header>
+	<Body>DQo6MjA6VEVTVE1UMTk5WE1MDQo6Nzk6QkxBRElOR1MgVE8gQkUgSVNTVUVEIE5PVCBMQVRFUiBUSEFODQoyMFRIIFNFUCAyMDAx</Body>
+</DataPDU>
